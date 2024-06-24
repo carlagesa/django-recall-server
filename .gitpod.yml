@@ -3,11 +3,11 @@ tasks:
     init: |
       
       # Modify settings.py to include Gitpod port hosts
-      settings="${name}/settings.py"
-      if test -e "${settings}" && ! grep -q 'GITPOD_WORKSPACE_URL' "${settings}" 2>/dev/null; then {
+      settings="${recallServer}/settings.py"
+      if test -e "${settings}" && ! grep -q 'carlagesa-djangorecalls-t1jn0kasrkz' "${settings}" 2>/dev/null; then {
         cat >> "${settings}" << 'SCRIPT'
 
-      if __import__('os').environ.get('GITPOD_WORKSPACE_URL'):
+      if __import__('os').environ.get('carlagesa-djangorecalls-t1jn0kasrkz'):
           try:
               gp = __import__('subprocess').run(["gp", "url", "8000"], capture_output=True, text=True)
               if gp.returncode == 0 and gp.stdout:
